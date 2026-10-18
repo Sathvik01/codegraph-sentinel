@@ -1,0 +1,1 @@
+"""CodeGraph Sentinel — graph-native architecture governance agent."""

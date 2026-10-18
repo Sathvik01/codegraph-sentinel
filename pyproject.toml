@@ -1,0 +1,34 @@
+[project]
+name = "codegraph-sentinel"
+version = "0.1.0"
+description = "Graph-native architecture governance agent: refuses refactors of structurally critical functions with graph evidence"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "falkordb>=1.8",
+    "fastmcp==4.1.0",
+    "langchain>=1.0,<2",
+    "langchain-nvidia-ai-endpoints>=1.5.0",
+    "langgraph>=1.0",
+    "langgraph-checkpoint-sqlite>=2.0",
+    "python-dotenv>=1.2.4",
+    "tree-sitter>=0.23",
+    "tree-sitter-python>=0.23",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/codegraph_sentinel"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
